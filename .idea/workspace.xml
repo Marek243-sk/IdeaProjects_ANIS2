@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b8c0bfa8-61cd-44ab-a471-841a9c7116f7" name="Changes" comment="Message" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/cv2" value="https_/github.com/Marek243-sk/ANIS2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Zadanie" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Ox4sSq12TWMpdIwvTbLtGAdDEl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-19",
+    "last_opened_file_path": "C:/Users/marek/IdeaProjects/Zadanie_ANIS2/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\marek\IdeaProjects\Zadanie_ANIS2\src" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8c0bfa8-61cd-44ab-a471-841a9c7116f7" name="Changes" comment="" />
+      <created>1682489106009</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682489106009</updated>
+      <workItem from="1682489107152" duration="123000" />
+      <workItem from="1682844307978" duration="121000" />
+      <workItem from="1682844442537" duration="185000" />
+      <workItem from="1682846687033" duration="168000" />
+      <workItem from="1682852522560" duration="205000" />
+      <workItem from="1683017943993" duration="6345000" />
+      <workItem from="1683110411163" duration="2271000" />
+      <workItem from="1683127358372" duration="5107000" />
+      <workItem from="1683139592803" duration="514000" />
+      <workItem from="1683215771635" duration="349000" />
+      <workItem from="1683306035273" duration="4566000" />
+      <workItem from="1683359233095" duration="10588000" />
+      <workItem from="1683384141681" duration="4414000" />
+      <workItem from="1683474582237" duration="1677000" />
+      <workItem from="1683476284047" duration="742000" />
+      <workItem from="1683477046177" duration="241000" />
+      <workItem from="1683477301042" duration="5302000" />
+      <workItem from="1683490216399" duration="863000" />
+      <workItem from="1683495152515" duration="1508000" />
+      <workItem from="1683540684716" duration="6870000" />
+    </task>
+    <task id="LOCAL-00001" summary="Message">
+      <created>1682846822091</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682846822091</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Pobyt, pridanie zapúzdrenia premenných (na public)">
+      <created>1682852694782</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682852694782</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Message">
+      <created>1683024843894</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683024843894</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Message">
+      <created>1683368164687</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683368164687</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Message">
+      <created>1683396800474</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683396800474</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Message">
+      <created>1683482118999</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683482118999</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Message">
+      <created>1683482196034</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683482196034</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Message">
+      <created>1683482637191</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683482637191</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Message">
+      <created>1683547184302</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683547184302</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Message">
+      <created>1683547253064</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683547253064</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Pobyt, pridanie zapúzdrenia premenných (na public)" />
+    <MESSAGE value="Message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Message" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

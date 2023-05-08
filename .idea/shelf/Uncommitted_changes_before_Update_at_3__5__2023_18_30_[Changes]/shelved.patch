@@ -1,0 +1,125 @@
+Index: Zadanie/src/zadanie/CestovnaKancelaria.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package zadanie;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Scanner;\r\n\r\npublic class CestovnaKancelaria {\r\n    private static CestovnaKancelaria instancia = new CestovnaKancelaria(\"Cestovná kancelaria\");\r\n    private String nazov;\r\n    private ArrayList<Pouzivatel> zoznamPouzivatelov = new ArrayList<Pouzivatel>();\r\n    private ArrayList<Pobyt> zoznamPobytov = new ArrayList<Pobyt>();\r\n    private ArrayList<Letenka> zoznamLeteniek = new ArrayList<Letenka>();\r\n    private CestovnaKancelaria(String nazov) {\r\n        this.nazov = nazov;\r\n    }\r\n\r\n    public static CestovnaKancelaria vytvorInstanciuSingleton() {\r\n        return instancia;\r\n    }\r\n\r\n    public void registraciaPouzivatela() {\r\n        Scanner scanner = new Scanner(System.in);\r\n\r\n        System.out.print(\"Zadajte meno: \");\r\n        String meno = scanner.nextLine();\r\n\r\n        System.out.print(\"Zadajte email: \");\r\n        String email = scanner.nextLine();\r\n\r\n        System.out.print(\"Zadajte telefónne číslo: \");\r\n        String telefonneCislo = scanner.nextLine();\r\n\r\n        System.out.print(\"Zadajte vek: \");\r\n        int vek = Integer.parseInt(scanner.nextLine());\r\n\r\n        // AK JE UŽ POUŽÍVATEĽ ZAREGISTROVANÝ\r\n        boolean pouzivatelExistuje = false;\r\n        for (int i = 0; i < zoznamPouzivatelov.size(); i++) {\r\n            if (zoznamPouzivatelov.get(i).getEmail() == email) {\r\n                pouzivatelExistuje = true;\r\n                break;\r\n            }\r\n        }\r\n        if (pouzivatelExistuje) {\r\n            System.out.println(\"CHYBA: Používateľ už je zaregistrovaný.\");\r\n        } else { //AK POUŽÍVATEĽ EŠTE NIE JE ZAREGISTROVANÝ\r\n            Pouzivatel pouzivatel = new Pouzivatel.PouzivatelBuilder(email).setMeno(meno).setTelefonneCislo(telefonneCislo).setVek(vek).vytvor();\r\n            System.out.println(\"Používateľ \" + pouzivatel.getMeno() + \" s tel.č.: \" + pouzivatel.getTelefonneCislo()\r\n                    + \" a vekom: \" + pouzivatel.getVek() + \" bol úspešne zaregistrovaný.\");\r\n            zoznamPouzivatelov.add(pouzivatel);\r\n        }\r\n    }\r\n\r\n    public void odstranitPouzivatela(String email) throws CKException {\r\n        boolean pouzivatelExistuje = false;\r\n        for (int i = 0; i < zoznamPouzivatelov.size(); i++) {\r\n            if (zoznamPouzivatelov.get(i).getEmail().equals(email)) {\r\n                zoznamPouzivatelov.remove(i);\r\n                pouzivatelExistuje = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!pouzivatelExistuje) {\r\n            throw new CKException(\"Pokúšate sa odstrániť neexistujúceho používateľa.\", this);\r\n        }\r\n    }\r\n\r\n    public void zmenitEmail(String email, String novyEmail) throws CKException {\r\n        boolean emailExistuje = false;\r\n        for (int i = 0; i < zoznamPouzivatelov.size(); i++) {\r\n            if (zoznamPouzivatelov.get(i).getEmail().equals(email)) {\r\n                emailExistuje = true;\r\n                boolean novyEmailExistuje = false;\r\n                for (int j = 0; j < zoznamPouzivatelov.size(); j++) {\r\n                    if(zoznamPouzivatelov.get(j).getEmail().equals(novyEmail)) {\r\n                        novyEmailExistuje = true;\r\n                        break;\r\n                    }\r\n                }\r\n                if (!novyEmailExistuje) {\r\n                    if (novyEmail.contains(\"@\")){\r\n                        zoznamPouzivatelov.get(i).setEmail(novyEmail);\r\n                    } else {\r\n                        throw new CKException(\"Email neobsahoval zavináč\", this);\r\n                    }\r\n                }\r\n            }\r\n        }\r\n        if (!emailExistuje) {\r\n            throw new CKException(\"Menený email neexistuje\");\r\n        }\r\n    }\r\n\r\n    public void zoznamRegistrovanychPouzivatelov() {\r\n        System.out.println(\"Zoznam používateľov je: \");\r\n        for (int i = 0; i < zoznamPouzivatelov.size(); i++) {\r\n            System.out.println(zoznamPouzivatelov.get(i).getMeno() + \", \" + zoznamPouzivatelov.get(i).getEmail() + \", \" + zoznamPouzivatelov.get(i).getTelefonneCislo()\r\n            + \", \" + zoznamPouzivatelov.get(i).getVek());\r\n        }\r\n    }\r\n    //VRÁTI POUŽÍVATEĽA NA ZÁKLADE EMAILU\r\n    public Pouzivatel getPouzivatel(String email) {\r\n        for (int i = 0; i < zoznamPouzivatelov.size(); i++) {\r\n            if (zoznamPouzivatelov.get(i).getEmail() == email) {\r\n                return zoznamPouzivatelov.get(i);\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public void registraciaLetenky() {\r\n        Scanner scanner = new Scanner(System.in);\r\n\r\n        System.out.print(\"Zadajte číslo sedadla: \");\r\n        String cisloSedadla = scanner.nextLine();\r\n\r\n        System.out.print(\"Zadajte triedu: \");\r\n        String trieda = scanner.nextLine();\r\n\r\n        System.out.print(\"Zadajte cenu: \");\r\n        int cena = Integer.parseInt(scanner.nextLine());\r\n\r\n        System.out.print(\"Zadajte druh: \");\r\n        String druh = scanner.nextLine();\r\n\r\n        System.out.print(\"Zadajte miesto odletu: \");\r\n        String miestoOdletu = scanner.nextLine();\r\n\r\n        System.out.print(\"Zadajte miesto príletu: \");\r\n        String miestoPriletu = scanner.nextLine();\r\n\r\n        System.out.print(\"Zadajte dátum: \");\r\n        String datum = scanner.nextLine();\r\n\r\n        System.out.print(\"Zadaj id letenky: \");\r\n        String idLetenky = scanner.nextLine();\r\n\r\n        Letenka letenka = new Letenka.LetenkaBuilder(cisloSedadla, trieda, Integer.parseInt(idLetenky)).setCena(cena).setDruh(druh)\r\n                .setMiestoOdletu(miestoOdletu).setMiestoPriletu(miestoPriletu).setDatum(datum).vytvor();\r\n        System.out.println(\"Letenka s číslom sedadla: \" + letenka.getCisloSedadla() + \" ,triedou: \" + letenka.getTrieda()\r\n        + \" , cenou: \" + letenka.getCena() + \"€, druh: \" + letenka.getDruh() + \" ,miestom odletu: \" + letenka.getMiestoOdletu()\r\n        + \" ,miestom príletu: \" + letenka.getMiestoPriletu() + \" ,dátumom: \" + letenka.getDatum() + \" bola úspešne zaregistrovaná.\");\r\n                zoznamLeteniek.add(letenka);\r\n    }\r\n\r\n    public Letenka getLetenka(int id) {\r\n        for (int i = 0; i < zoznamLeteniek.size(); i++) {\r\n            if (zoznamLeteniek.get(i).getIdLetenky() == id) {\r\n                return this.zoznamLeteniek.get(i);\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public void zoznamRegistrovanychLeteniek() {\r\n        System.out.println(\"Zoznam leteniek je: \");\r\n        for (int i = 0; i < zoznamLeteniek.size(); i++) {\r\n            System.out.println(zoznamLeteniek.get(i).getCisloSedadla()+ \", \" + zoznamLeteniek.get(i).getTrieda()\r\n                    + \", \" + zoznamLeteniek.get(i).getCena() + \"€, \" + zoznamLeteniek.get(i).getDruh() + \", \" +\r\n                    zoznamLeteniek.get(i).getMiestoOdletu() + \", \" + zoznamLeteniek.get(i).getMiestoPriletu() + \", \" +\r\n                    zoznamLeteniek.get(i).getDatum());\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Zadanie/src/zadanie/CestovnaKancelaria.java b/Zadanie/src/zadanie/CestovnaKancelaria.java
+--- a/Zadanie/src/zadanie/CestovnaKancelaria.java	(revision 351c99fd66c099b06d4f181de31d19a980a0d050)
++++ b/Zadanie/src/zadanie/CestovnaKancelaria.java	(date 1683130975233)
+@@ -35,7 +35,7 @@
+         // AK JE UŽ POUŽÍVATEĽ ZAREGISTROVANÝ
+         boolean pouzivatelExistuje = false;
+         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
+-            if (zoznamPouzivatelov.get(i).getEmail() == email) {
++            if (zoznamPouzivatelov.get(i).getEmail().equals(email)) {
+                 pouzivatelExistuje = true;
+                 break;
+             }
+@@ -100,7 +100,7 @@
+     //VRÁTI POUŽÍVATEĽA NA ZÁKLADE EMAILU
+     public Pouzivatel getPouzivatel(String email) {
+         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
+-            if (zoznamPouzivatelov.get(i).getEmail() == email) {
++            if (zoznamPouzivatelov.get(i).getEmail().equals(email)) {
+                 return zoznamPouzivatelov.get(i);
+             }
+         }
+Index: Zadanie/src/zadanie/main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package zadanie;\r\n\r\npublic class main {\r\n    public static void main(String[] args) {\r\n\r\n        System.out.println(\"Vytajte v: Cestovná kancelária\");\r\n\r\n        CestovnaKancelaria ck = CestovnaKancelaria.vytvorInstanciuSingleton();\r\n\r\n        try {\r\n            ck.registraciaPouzivatela();\r\n            ck.zoznamRegistrovanychPouzivatelov();\r\n            ck.zmenitEmail(\"marek@123\", \"MAREK@456\");\r\n            ck.zoznamRegistrovanychPouzivatelov();\r\n            ck.zmenitEmail(\"abc@789\", \"ABC@987\");\r\n            ck.zoznamRegistrovanychPouzivatelov();\r\n        } catch (CKException chyba) {\r\n            System.out.println(chyba);\r\n        }\r\n\r\n        /*\r\n        ck.registraciaPouzivatela();\r\n        ck.zoznamRegistrovanychPouzivatelov();\r\n\r\n        ck.registraciaLetenky();*/\r\n        //ck.zoznamRegistrovanychLeteniek();\r\n\r\n        //ManazerUbytovania manazer = new ManazerUbytovania();\r\n        /*manazer.pridelenieUbytovania(\"Hotel Dukla\", \"Námestie legionárov\", 52, \"5\", 1, 100);\r\n        manazer.pridelenieUbytovania(\"Hotel Torysa\", \"Námestie slobody 1\", 15, \"7\", 2,  200);\r\n        manazer.pridelenieUbytovania(\"Hotel Dukla\", \"Námestie legionárov\", 52, \"14\", 1, 400);*/\r\n        /*manazer.pridelenieUbytovania(\"Hotel Torysa\", \"Námestie legionárov\", 52, \"21\", 1, 600);\r\n        manazer.uplatniZlavu();\r\n        manazer.ukazPonukuUbytovani();*/\r\n\r\n\r\n        try {\r\n            Destinacia destinacia = new Destinacia(\"Barcelona\", \"Španielsko\");\r\n\r\n            Ubytovanie ubytovanie = new Ubytovanie(\"A\", \"B\", 2, \"10\", 2, 500);\r\n\r\n            Atrakcia atrakcia1 = new ZimnaAtrakcia(\"Štrbské pleso\", \"zima\", 50);\r\n\r\n            Pobyt pobyt = new Pobyt(1, ck.getPouzivatel(\"marek@mail.com\"), ck.getLetenka(1), ubytovanie, atrakcia1, destinacia);\r\n            System.out.println(pobyt.cenaPobytu());\r\n\r\n        } catch (DestinaciaException chyba) {\r\n            System.out.println(chyba);\r\n        }\r\n\r\n\r\n        /*Atrakcia atrakcia2 = new ZimnaAtrakcia(\"Tatry\", \"jeseň\");\r\n        Atrakcia atrakcia3 = new LetnaAtrakcia(\"Chorvátsko\", \"leto\");*/\r\n\r\n        /*ZoznamAtrakcii zoznamAtrakcii = new ZoznamAtrakcii(\"Zoznam\", \"sezóna\");\r\n        zoznamAtrakcii.pridajAtrakciu(atrakcia1);\r\n        zoznamAtrakcii.pridajAtrakciu(atrakcia2);\r\n        zoznamAtrakcii.pridajAtrakciu(atrakcia3);\r\n        zoznamAtrakcii.zobrazAtrakcie();*/\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Zadanie/src/zadanie/main.java b/Zadanie/src/zadanie/main.java
+--- a/Zadanie/src/zadanie/main.java	(revision 351c99fd66c099b06d4f181de31d19a980a0d050)
++++ b/Zadanie/src/zadanie/main.java	(date 1683131142001)
+@@ -34,19 +34,15 @@
+         manazer.ukazPonukuUbytovani();*/
+ 
+ 
+-        try {
+-            Destinacia destinacia = new Destinacia("Barcelona", "Španielsko");
++        Destinacia destinacia = new Destinacia("Barcelona", "Španielsko");
+ 
+-            Ubytovanie ubytovanie = new Ubytovanie("A", "B", 2, "10", 2, 500);
++        Ubytovanie ubytovanie = new Ubytovanie("A", "B", 2, "10", 2, 500);
+ 
+-            Atrakcia atrakcia1 = new ZimnaAtrakcia("Štrbské pleso", "zima", 50);
++        Atrakcia atrakcia1 = new ZimnaAtrakcia("Štrbské pleso", "zima", 50);
+ 
+-            Pobyt pobyt = new Pobyt(1, ck.getPouzivatel("marek@mail.com"), ck.getLetenka(1), ubytovanie, atrakcia1, destinacia);
+-            System.out.println(pobyt.cenaPobytu());
++        Pobyt pobyt = new Pobyt(1, ck.getPouzivatel("marek@123"), ck.getLetenka(1), ubytovanie, atrakcia1, destinacia);
++        System.out.println(pobyt.cenaPobytu());
+ 
+-        } catch (DestinaciaException chyba) {
+-            System.out.println(chyba);
+-        }
+ 
+ 
+         /*Atrakcia atrakcia2 = new ZimnaAtrakcia("Tatry", "jeseň");
+@@ -57,7 +53,5 @@
+         zoznamAtrakcii.pridajAtrakciu(atrakcia2);
+         zoznamAtrakcii.pridajAtrakciu(atrakcia3);
+         zoznamAtrakcii.zobrazAtrakcie();*/
+-
+-
+     }
+ }
+\ No newline at end of file
+Index: Zadanie/src/zadanie/DestinaciaException.java
+===================================================================
+diff --git a/Zadanie/src/zadanie/DestinaciaException.java b/Zadanie/src/zadanie/DestinaciaException.java
+deleted file mode 100644
+--- a/Zadanie/src/zadanie/DestinaciaException.java	(revision 351c99fd66c099b06d4f181de31d19a980a0d050)
++++ /dev/null	(revision 351c99fd66c099b06d4f181de31d19a980a0d050)
+@@ -1,18 +0,0 @@
+-package zadanie;
+-
+-public class DestinaciaException extends Exception {
+-
+-    protected  Destinacia destinacia;
+-    public DestinaciaException() {
+-
+-    }
+-
+-    public DestinaciaException(String sprava) {
+-        this(sprava, null);
+-    }
+-
+-    public DestinaciaException(String sprava, Destinacia destinacia) {
+-        super(sprava);
+-        this.destinacia = destinacia;
+-    }
+-}
+Index: Zadanie/src/zadanie/Destinacia.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package zadanie;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class Destinacia {\r\n    private String nazov;\r\n    private String krajina;\r\n\r\n\r\n    public Destinacia(String nazov, String krajina) throws DestinaciaException{\r\n        if (!(this.nazov instanceof String)) {\r\n            throw new DestinaciaException(\"Názov nebol zadaný ako reťazec.\", this);\r\n        }\r\n        this.nazov = nazov;\r\n\r\n        if (!(this.krajina instanceof String)) {\r\n            throw new DestinaciaException(\"Krajina nebola zadaná ako reťazec.\", this);\r\n        }\r\n        this.krajina = krajina;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Zadanie/src/zadanie/Destinacia.java b/Zadanie/src/zadanie/Destinacia.java
+--- a/Zadanie/src/zadanie/Destinacia.java	(revision 351c99fd66c099b06d4f181de31d19a980a0d050)
++++ b/Zadanie/src/zadanie/Destinacia.java	(date 1683129976529)
+@@ -7,15 +7,8 @@
+     private String krajina;
+ 
+ 
+-    public Destinacia(String nazov, String krajina) throws DestinaciaException{
+-        if (!(this.nazov instanceof String)) {
+-            throw new DestinaciaException("Názov nebol zadaný ako reťazec.", this);
+-        }
++    public Destinacia(String nazov, String krajina) {
+         this.nazov = nazov;
+-
+-        if (!(this.krajina instanceof String)) {
+-            throw new DestinaciaException("Krajina nebola zadaná ako reťazec.", this);
+-        }
+         this.krajina = krajina;
+     }
+ }
+\ No newline at end of file
