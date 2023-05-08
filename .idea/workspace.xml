@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8c0bfa8-61cd-44ab-a471-841a9c7116f7" name="Changes" comment="Message" />
+    <list default="true" id="b8c0bfa8-61cd-44ab-a471-841a9c7116f7" name="Changes" comment="Message">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +31,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Ox4sSq12TWMpdIwvTbLtGAdDEl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -81,7 +84,7 @@
       <workItem from="1683477301042" duration="5302000" />
       <workItem from="1683490216399" duration="863000" />
       <workItem from="1683495152515" duration="1508000" />
-      <workItem from="1683540684716" duration="6870000" />
+      <workItem from="1683540684716" duration="7191000" />
     </task>
     <task id="LOCAL-00001" summary="Message">
       <created>1682846822091</created>
