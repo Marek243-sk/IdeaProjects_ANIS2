@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8c0bfa8-61cd-44ab-a471-841a9c7116f7" name="Changes" comment="Message" />
+    <list default="true" id="b8c0bfa8-61cd-44ab-a471-841a9c7116f7" name="Changes" comment="Message">
+      <change afterPath="$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/DestinaciaException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/ZoznamDestinacii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/Destinacia.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/Destinacia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/ManazerUbytovania.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/ManazerUbytovania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/ZoznamAtrakcii.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/ZoznamAtrakcii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +31,10 @@
         <entry key="$PROJECT_DIR$/cv2" value="https_/github.com/Marek243-sk/ANIS2" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Zadanie" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Zadanie_ANIS2" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Zadanie_ANIS2/src/zadanie_ANIS2/Letenka.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,6 +50,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/marek/IdeaProjects/Zadanie_ANIS2/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -92,7 +106,11 @@
       <workItem from="1683581315385" duration="170000" />
       <workItem from="1683636861132" duration="827000" />
       <workItem from="1683647484853" duration="4668000" />
-      <workItem from="1683742901294" duration="2552000" />
+      <workItem from="1683742901294" duration="3436000" />
+      <workItem from="1683749705112" duration="606000" />
+      <workItem from="1683750413251" duration="341000" />
+      <workItem from="1683783736039" duration="836000" />
+      <workItem from="1683798169436" duration="7443000" />
     </task>
     <task id="LOCAL-00001" summary="Message">
       <created>1682846822091</created>
@@ -255,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683744994527</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Message">
+      <created>1683745840714</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1683745840714</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
